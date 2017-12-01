@@ -1,0 +1,69 @@
+====================================================================================
+Please follow the instruction below to install UHD and GHURadio in Ubuntu LTS 14.04.
+The instructions might work for other Ubuntu version also.
+But there is no guarantee. 
+====================================================================================
+
+====================================================================================
+Installing UHD from source:
+====================================================================================
+
+1.sudo apt-get install libboost-all-dev libusb-1.0-0-dev python-mako doxygen python-docutils git cmake build-essential libncurses5 libncurses5-dev
+
+2. git clone git://github.com/EttusResearch/uhd.git
+3. cd uhd/
+4. git checkout release_003_010_001_001
+5. cd host/
+6. mkdir build && cd build
+7. cmake ../
+8. make -j4
+9. make test
+10. sudo make install
+11. sudo ldconfig
+
+====================================================================================
+Post Install:
+====================================================================================
+
+Add this line to your $HOME/.bashrc file, and source it, or logout and log back
+in:
+export LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+-
+On Linux, udev handles USB plug and unplug events. The following commands
+install a udev rule so that non-root
+users may access the device. Without this, you will not see the radio as a
+normal user. This step is only necessary
+for devices that use USB to connect to the host computer, such as the B200,
+B210, and B200mini.
+cd <path-to-uhd-repository>/uhd/host/utils
+sudo cp uhd-usrp.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+-
+For USRP devices that use Ethernet to connect to the host computer, such as the
+N200, N210, X300, X310, set the
+IP address of your system to 192.168.10.1, with a netmask of 255.255.255.0. The
+default IP address of the USRP is
+192.168.10.2 (for 1 GbE), and 192.168.40.2 (for 10 GbE), with a netmask of
+255.255.255.0.
+-
+Use Network Manager GUI (in Unity, KDE, GNOME, Xfce, etc.) to set the IP
+address. If you set the IP address from
+the command line with ifconfig, then Network Manager may probably overwrite
+this.
+
+====================================================================================
+GNURadio Install
+====================================================================================
+
+sudo apt-get -y install git swig cmake doxygen build-essential libboost-all-dev libtool libusb-1.0-0 libusb-1.0-0-dev libudev-dev libncurses5-dev libfftw3-bin libfftw3-dev libfftw3-doc libcppunit-1.13-0 libcppunit-dev libcppunit-doc ncurses-bin cpufrequtils python-numpy python-numpy-doc python-numpy-dbg python-scipy python-docutils qt4-bin-dbg qt4-default qt4-doc libqt4-dev libqt4-dev-bin python-qt4 python-qt4-dbg python-qt4-dev python-qt4-doc python-qt4-doc libqwt6 libfftw3-bin libfftw3-dev libfftw3-doc ncurses-bin libncurses5 libncurses5-dev libncurses5-dbg libfontconfig1-dev libxrender-dev libpulse-dev swig g++ automake autoconf libtool python-dev libfftw3-dev libcppunit-dev libboost-all-dev libusb-dev libusb-1.0-0-dev fort77 libsdl1.2-dev python-wxgtk2.8 git-core libqt4-dev python-numpy ccache python-opengl libgsl0-dev python-cheetah python-mako python-lxml doxygen qt4-default qt4-dev-tools libusb-1.0-0-dev libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools python-qwt5-qt4 cmake git-core wget libxi-dev gtk2-engines-pixbuf r-base-dev python-tk liborc-0.4-0 liborc-0.4-dev libasound2-dev python-gtk2 libzmq-dev libzmq1 python-requests python-sphinx libcomedi-dev python-zmq
+
+git clone --recursive https://github.com/gnuradio/gnuradio.git
+cd gnuradio/
+git checkout v3.7.11
+mkdir build && cd build
+cmake ../
+make -j4
+sudo make install
+sudo ldconfig
