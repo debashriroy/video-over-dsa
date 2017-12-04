@@ -4,8 +4,8 @@ In this project, HD videos can be streamed over contested RF environment impleme
 Equipment Needed:
 
 1. Webcamera with 720p resolution
-2. 2 USRP B210s for each PU or SU transmitter-receiver pair 
-3. 1 USRP B210 for spectrum sensing
+2. Two USRP B210s for each PU or SU transmitter-receiver pair 
+3. One USRP B210 for spectrum sensing
 4. Encough computing resources for operating as video transmitter, receiver, channel selector, and feedback server
 
 
