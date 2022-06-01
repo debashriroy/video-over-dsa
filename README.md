@@ -1,6 +1,11 @@
-# video-over-dsa
-In this project, HD videos can be streamed over contested RF environment implementing adaptive encoding and channel selection, leveraging the concept of Dynamic Spectrum Access.
+# Adaptive Video Encoding and Dynamic Channel Access for Real-time Streaming over SDRs
+In this project, HD videos can be streamed over contested RF environment implementing adaptive encoding and channel selection, leveraging the concept of Dynamic Spectrum Access. 
 
+### Cite This paper
+To use this repository, please refer to our paper: 
+
+ `D. Roy, T. Mukherjee, M. Chatterjee and E. Pasiliao, "Adaptive Video Encoding and Dynamic Channel Access for Real-time Streaming over SDRs," 2018 IEEE 37th International Performance Computing and Communications Conference (IPCCC), 2018, pp. 1-9, doi: 10.1109/PCCC.2018.8710795.`
+ 
 Equipment Needed:
 
 1. Webcamera with 720p resolution
