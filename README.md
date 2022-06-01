@@ -1,5 +1,5 @@
 # Adaptive Video Encoding and Dynamic Channel Access for Real-time Streaming over SDRs
-In this project, HD videos can be streamed over contested RF environment implementing adaptive encoding and channel selection, leveraging the concept of Dynamic Spectrum Access. 
+In this project, HD videos can be streamed over contested RF environment implementing adaptive encoding and channel selection, leveraging the concept of Dynamic Spectrum Access. This repository was used to implement the testbed in the linked paper: https://ieeexplore.ieee.org/abstract/document/8710795
 
 ## Cite This paper
 To use this repository, please refer to our paper: 
